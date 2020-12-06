@@ -36,7 +36,7 @@
 # Widok kelnera
 
 - '/waiter'
-    - tabela, kgóra w wierszach wyświetla stoliki
+    - tabela, która w wierszach wyświetla stoliki
     - w kolumnach infomracje o statusie danego stolika, czas od ostatniej aktywności
     - w ostatniej kolumnie znajdą się dostępne akcje
 
