@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import styles from './PageNav.module.scss';
 
-
-
 const PageNav = () => {
   return ( 
     <nav className={styles.component}>
