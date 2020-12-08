@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 
 const demoContent = [
@@ -83,7 +84,7 @@ const Waiter = () => (
             </TableCell>
             <TableCell>
               {row.order && (
-                <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                <Button component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
                   {row.order}
                 </Button>
               )}
