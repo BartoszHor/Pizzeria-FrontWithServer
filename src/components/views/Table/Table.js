@@ -119,7 +119,6 @@ const tableContent = [
 ];
 
 const renderActions = (status, singleTable) => {
-  console.log(singleTable);
   switch (status) {
     case 'free':
       return (
@@ -140,7 +139,6 @@ const renderActions = (status, singleTable) => {
 
 const TableView = () => {
   const [startDate, setStartDate] = useState(new Date());
-
   return (
     <div className={styles.component}>
       <div className={styles.datepicker}>

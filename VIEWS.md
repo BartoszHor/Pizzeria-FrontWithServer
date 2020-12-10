@@ -29,8 +29,6 @@
 - '/tables/events/:id
     - analogicznie do powyższych, dla eventów
 
-- '/tables/events/new
-    - analogicznie jak powyżej, dla eventów ale bez początkowej informacji
 
 
 # Widok kelnera
