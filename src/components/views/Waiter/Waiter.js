@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
+    changeTableStatus: PropTypes.func,
     tables: PropTypes.object,
     loading: PropTypes.shape({
       active: PropTypes.bool,
@@ -24,34 +25,71 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderActions(status){
+  renderStatus(id, status){
+    console.log(id, status);
+    const {changeTableStatus} = this.props;
+    switch (status) {
+      case 'free':
+        status = 'thinking';
+        changeTableStatus(id, status);
+        break;      
+      case 'thinking':
+        status = 'ordered';
+        changeTableStatus(id, status);
+        break;
+      case 'ordered':
+        status = 'prepared';
+        changeTableStatus(id, status);
+        break;
+      case 'prepared':
+        status = 'delivered';
+        changeTableStatus(id, status);
+        break;
+      case 'delivered':
+        status = 'paid';
+        changeTableStatus(id, status);
+        break;
+      case 'paid':
+        status = 'free';
+        changeTableStatus(id, status);
+        break;
+      default:
+        return null;
+    }
+  }
+
+  renderActions(row){
+    let id  = row.id;
+    let status = row.status;
+
     switch (status) {
       case 'free':
         return (
           <>
-            <Button>thinking</Button>
-            <Button>new order</Button>
+            <Button onClick={() => this.renderStatus(id, status)}>thinking</Button>
+            <Button onClick={() => this.renderStatus(id, status)}>new order</Button>
           </>
         );
       case 'thinking':
         return (
-          <Button>new order</Button>
+          <Button onClick={() => this.renderStatus(id, status)}>new order</Button>
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button onClick={() => this.renderStatus(id, status)}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button onClick={() => this.renderStatus(id, status)}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button onClick={() => this.renderStatus(id, status)}>paid</Button>
+
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button onClick={() => this.renderStatus(id, status)}>free</Button>
         );
       default:
         return null;
@@ -59,7 +97,7 @@ class Waiter extends React.Component {
   }
 
   render() {
-    const { loading: { active, error }, tables } = this.props;
+    const { loading: { active, error }, tables, changeTableStatus } = this.props;
 
     if(active || !tables.length){
       return (
@@ -103,7 +141,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row)}
                   </TableCell>
                 </TableRow>
               ))}
