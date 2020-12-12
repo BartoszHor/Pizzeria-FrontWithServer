@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return ({
     fetchTables: () => dispatch(fetchFromAPI()),
-    changeTableStatus: (id, status) => dispatch(tableChange(id, status)),
+    changeTableStatus: (id, status, order) => dispatch(tableChange(id, status, order)),
   });
 };
 

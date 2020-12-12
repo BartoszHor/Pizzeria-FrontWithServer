@@ -13,7 +13,7 @@ class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
     changeTableStatus: PropTypes.func,
-    tables: PropTypes.object,
+    tables: PropTypes.array,
     loading: PropTypes.shape({
       active: PropTypes.bool,
       error: PropTypes.node,
@@ -25,33 +25,38 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderStatus(id, status){
-    console.log(id, status);
+  renderStatus(id, status, order){
     const {changeTableStatus} = this.props;
     switch (status) {
       case 'free':
         status = 'thinking';
-        changeTableStatus(id, status);
+        order = order;
+        changeTableStatus(id, status, order);
         break;      
       case 'thinking':
         status = 'ordered';
-        changeTableStatus(id, status);
+        order = order;
+        changeTableStatus(id, status, order);
         break;
       case 'ordered':
         status = 'prepared';
-        changeTableStatus(id, status);
+        order = order;
+        changeTableStatus(id, status, order);
         break;
       case 'prepared':
         status = 'delivered';
-        changeTableStatus(id, status);
+        order = order;
+        changeTableStatus(id, status, order);
         break;
       case 'delivered':
         status = 'paid';
-        changeTableStatus(id, status);
+        order = order;
+        changeTableStatus(id, status, order);
         break;
       case 'paid':
         status = 'free';
-        changeTableStatus(id, status);
+        order = order;
+        changeTableStatus(id, status, order);
         break;
       default:
         return null;
@@ -61,35 +66,36 @@ class Waiter extends React.Component {
   renderActions(row){
     let id  = row.id;
     let status = row.status;
+    let order = row.order;
 
     switch (status) {
       case 'free':
         return (
           <>
-            <Button onClick={() => this.renderStatus(id, status)}>thinking</Button>
-            <Button onClick={() => this.renderStatus(id, status)}>new order</Button>
+            <Button onClick={() => this.renderStatus(id, status, order)}>thinking</Button>
+            <Button onClick={() => this.renderStatus(id, status, order)}>new order</Button>
           </>
         );
       case 'thinking':
         return (
-          <Button onClick={() => this.renderStatus(id, status)}>new order</Button>
+          <Button onClick={() => this.renderStatus(id, status, order)}>new order</Button>
         );
       case 'ordered':
         return (
-          <Button onClick={() => this.renderStatus(id, status)}>prepared</Button>
+          <Button onClick={() => this.renderStatus(id, status, order)}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button onClick={() => this.renderStatus(id, status)}>delivered</Button>
+          <Button onClick={() => this.renderStatus(id, status, order)}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button onClick={() => this.renderStatus(id, status)}>paid</Button>
+          <Button onClick={() => this.renderStatus(id, status, order)}>paid</Button>
 
         );
       case 'paid':
         return (
-          <Button onClick={() => this.renderStatus(id, status)}>free</Button>
+          <Button onClick={() => this.renderStatus(id, status, order)}>free</Button>
         );
       default:
         return null;

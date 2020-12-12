@@ -36,12 +36,11 @@ export const fetchFromAPI = () => {
   };
 };
 
-export const tableChange = (id, status) => {
-  console.log(typeof(id));
+export const tableChange = (id, status, order) => {
   return (dispatch, getState) => {
 
     Axios
-      .put(`${api.url}/api/${api.tables}/${id}`, {status: status})
+      .put(`${api.url}/api/${api.tables}/${id}`, {status: status, order: order})
       .then(res => {
         dispatch(fetchChange(res.data));
       })
@@ -56,7 +55,6 @@ export const tableChange = (id, status) => {
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case CHANGE_TABLE_STATUS: {
-      console.log(statePart);
       const newStatePart = statePart.data.map((table) => {
         if(table.id === action.payload.id) {
           return action.payload;
