@@ -75,7 +75,7 @@ const app = {
     const thisApp = this;
 
     thisApp.data = {};
-    const url = settings.db.url + '/' + settings.db.product;
+    const url = settings.db.url + '/test' + settings.db.product;
 
     fetch(url)
       .then(function(rawResponse){
