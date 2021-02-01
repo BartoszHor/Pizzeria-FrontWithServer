@@ -23,9 +23,6 @@ server.get(/^\/panel.*/, (req,res) =>{
   }
 });
 
-server.get(/^\/!api.*/, (req, res) => {
-  res.sendFile(path.join(__dirname+'/clientPanel/index.html'));
-})
 
 server.use(function(req, res, next) {
   const api = /^\/api(.*)$/.exec(req.url);
