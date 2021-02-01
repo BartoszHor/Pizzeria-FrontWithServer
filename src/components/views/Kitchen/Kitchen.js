@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -15,6 +15,9 @@ import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import SwitchChanger from '../../features/Switch/Switch';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFromAPI } from '../../../redux/kitchenRedux';
+
 
 const useRowStyles = makeStyles({
   root: {
@@ -41,6 +44,17 @@ function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
+
+  const dispatch = useDispatch();
+  const dishes = useSelector(state => state.dishes.data);
+
+  if(dishes) {
+    console.log(dishes)
+  }
+ 
+  useEffect(() => {
+    dispatch(fetchFromAPI());
+  }, []);
 
   return (
     <React.Fragment>

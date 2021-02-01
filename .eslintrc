@@ -28,7 +28,7 @@
   ],
   "rules": {
     "indent": [
-      "error",
+      "warn",
       2,
       {"SwitchCase": 1}
     ],
@@ -36,16 +36,16 @@
       "off"
     ],
     "quotes": [
-      "error",
+      "warn",
       "single",
       {"allowTemplateLiterals": true}
     ],
     "semi": [
-      "error",
+      "warn",
       "always"
     ],
     "comma-dangle": [
-      "error",
+      "warn",
       "always-multiline"
     ],
     "no-console": "off"

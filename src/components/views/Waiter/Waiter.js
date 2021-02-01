@@ -54,9 +54,6 @@ class Waiter extends React.Component {
         changeTableStatus(id, status, order);
         break;
       case 'paid':
-        status = 'free';
-        order = order;
-        changeTableStatus(id, status, order);
         break;
       default:
         return null;
