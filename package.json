@@ -17,11 +17,7 @@
     "eject": "react-scripts eject",
     "server": "node server.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  
   "lint-staged": {
     "src/**/*.js": [
       "yarn test-related --",
