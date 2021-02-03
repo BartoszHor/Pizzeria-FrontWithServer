@@ -30,6 +30,13 @@
   }
 }
 
+.admin {
+  position: relative;
+  left: 94%;
+  color: white;
+  text-decoration: none;
+}
+
 .h1, .product__name, .product__base-price, .page__title {
   font-family: "Oswald", sans-serif;
   font-size: 26px;
