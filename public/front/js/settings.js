@@ -95,7 +95,7 @@ export const classNames = {
 
 export const settings = {
   db: {
-    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131/api' : ''),
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131/api' : '/api'),
     product: 'product',
     order: 'order',
     booking: 'booking',
