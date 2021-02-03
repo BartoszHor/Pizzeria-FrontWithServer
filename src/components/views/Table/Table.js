@@ -20,7 +20,8 @@ import { fetchFromAPI, getAll, getBookingsForDate } from '../../../redux/booking
 const TableView = () => {
   const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
-  const bookings = useSelector(state => getBookingsForDate(state, dateToStr(startDate)));
+  const bookings = useSelector((state) => {
+    return getBookingsForDate(state, dateToStr(startDate))});
  
   useEffect(() => {
     dispatch(fetchFromAPI());
@@ -60,7 +61,7 @@ const TableView = () => {
     <div className={styles.component}>
       <div className={styles.datepicker}>
         <DatePicker selected={startDate} onChange={date => {
-          return setStartDate(date);
+          setStartDate(date);
         }} />
       </div>
       <Paper>

@@ -9,7 +9,7 @@
     "start:react": "react-scripts start",
     "start:api": "yarn build && node server.js",
     "start-and-test": "run-p start-silent test ",
-    "builda": "react-scripts build",
+    "build": "react-scripts build",
     "lint": "esw --watch --clear",
     "test": "react-scripts test --noStackTrace",
     "test-all": "react-scripts test --watchAll=false --noStackTrace",

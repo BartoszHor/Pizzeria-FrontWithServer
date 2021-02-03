@@ -26,7 +26,7 @@ export const fetchFromAPI = () => {
     dispatch(fetchStarted());
 
     Axios
-      .get(`${api.url}/api/${api.tables}`)
+      .get(`${api.url}/api/${api.table}`)
       .then(res => {
         dispatch(fetchSuccess(res.data));
       })
@@ -40,7 +40,7 @@ export const tableChange = (id, status, order) => {
   return (dispatch, getState) => {
 
     Axios
-      .put(`${api.url}/api/${api.tables}/${id}`, {status: status, order: order})
+      .put(`${api.url}/api/${api.table}/${id}`, {status: status, order: order})
       .then(res => {
         dispatch(fetchChange(res.data));
       })

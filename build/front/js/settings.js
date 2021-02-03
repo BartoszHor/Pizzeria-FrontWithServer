@@ -52,6 +52,7 @@ export const select = {
     formSubmit: '.cart__order [type="submit"]',
     phone: '[name="phone"]',
     address: '[name="address"]',
+    table: '[name="table"]',
   },
   cartProduct: {
     amountWidget: '.widget-amount',
@@ -94,7 +95,7 @@ export const classNames = {
 
 export const settings = {
   db: {
-    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131/api' : '/api'),
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131/api' : ''),
     product: 'product',
     order: 'order',
     booking: 'booking',
@@ -103,6 +104,7 @@ export const settings = {
     dateEndParamKey: 'date_lte',
     notRepeatParam: 'repeat=false',
     repeatParam: 'repeat_ne=false',
+    table: 'table'
   },
   hours: {
     open: 12,

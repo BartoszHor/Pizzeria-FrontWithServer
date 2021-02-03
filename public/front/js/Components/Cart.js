@@ -21,6 +21,7 @@ class Cart {
     thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
     thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
+    thisCart.dom.table = thisCart.dom.form.querySelector(select.cart.table);
     thisCart.dom.phone = thisCart.dom.wrapper.querySelector(select.cart.phone);
     thisCart.dom.address = thisCart.dom.wrapper.querySelector(select.cart.address);
     thisCart.renderTotalKeys = ['totalNumber', 'totalPrice', 'subtotalPrice', 'deliveryFee'];
@@ -86,6 +87,28 @@ class Cart {
     }
   }
 
+  updateDbTable(tableId, order){
+    const thisCart = this
+    const url = settings.db.url + '/' + settings.db.table + '/' + tableId
+
+    const payload = {
+      id: parseInt(tableId),
+      status: 'ordered',
+      order: order,
+    }
+
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+
+    fetch(url, options)
+
+  }
+
   sendOrder(){
     const thisCart = this;
     const url = settings.db.url + '/' + settings.db.order;
@@ -115,6 +138,7 @@ class Cart {
       .then(function(response){
         return response.json();
       }).then(function(parsedResponse){
+        thisCart.updateDbTable(thisCart.dom.table.value, parsedResponse.id)
         console.log(parsedResponse);
       });
   }

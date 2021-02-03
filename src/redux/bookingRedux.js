@@ -6,8 +6,6 @@ export const getAll = ({bookings}) => bookings.data;
 export const getLoadingState = ({bookings}) => bookings.loading;
 export const getBookingsForDate = ({bookings}, day) => bookings.data[day]
 
-
-
 /* action name creator */
 const reducerName = 'bookings';
 const createActionName = name => `app/${reducerName}/${name}`;

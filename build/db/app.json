@@ -1,22 +1,77 @@
-{ "dishes": [
-  {"dish": "Pizza1", "orderNumber": 1234, "clientType": "IN", "status": "DONE", "price": "20$", "date": "2020-12-14", "amount": 1},
-  {"dish": "Pizza1", "orderNumber": 1234, "clientType": "IN", "status": "DONE", "price": "20$", "date": "2020-12-14", "amount": 1},
-  {"dish": "Pizza1", "orderNumber": 1234, "clientType": "IN", "status": "DONE", "price": "20$", "date": "2020-12-14", "amount": 1},
-  {"dish": "Pizza1", "orderNumber": 1234, "clientType": "IN", "status": "DONE", "price": "20$", "date": "2020-12-14", "amount": 1},
-  {"dish": "Pizza1", "orderNumber": 1234, "clientType": "IN", "status": "DONE", "price": "20$", "date": "2020-12-14", "amount": 1},
-  {"dish": "Pizza1", "orderNumber": 1234, "clientType": "IN", "status": "DONE", "price": "20$", "date": "2020-12-14", "amount": 1}
-],
-
-
-  "tables": [
-  {"id": "1", "status": "free", "order": null},
-  {"id": "2", "status": "thinking", "order": null},
-  {"id": "3", "status": "ordered", "order": 123},
-  {"id": "4", "status": "prepared", "order": 234},
-  {"id": "5", "status": "delivered", "order": 345},
-  {"id": "6", "status": "paid", "order": 456}
+{
+  "dishes": [
+    {
+      "dish": "Pizza1",
+      "orderNumber": 1234,
+      "clientType": "IN",
+      "status": "DONE",
+      "price": "20$",
+      "date": "2020-12-14",
+      "amount": 1
+    },
+    {
+      "dish": "Pizza1",
+      "orderNumber": 1234,
+      "clientType": "IN",
+      "status": "DONE",
+      "price": "20$",
+      "date": "2020-12-14",
+      "amount": 1
+    },
+    {
+      "dish": "Pizza1",
+      "orderNumber": 1234,
+      "clientType": "IN",
+      "status": "DONE",
+      "price": "20$",
+      "date": "2020-12-14",
+      "amount": 1
+    },
+    {
+      "dish": "Pizza1",
+      "orderNumber": 1234,
+      "clientType": "IN",
+      "status": "DONE",
+      "price": "20$",
+      "date": "2020-12-14",
+      "amount": 1
+    },
+    {
+      "dish": "Pizza1",
+      "orderNumber": 1234,
+      "clientType": "IN",
+      "status": "DONE",
+      "price": "20$",
+      "date": "2020-12-14",
+      "amount": 1
+    },
+    {
+      "dish": "Pizza1",
+      "orderNumber": 1234,
+      "clientType": "IN",
+      "status": "DONE",
+      "price": "20$",
+      "date": "2020-12-14",
+      "amount": 1
+    }
   ],
-  
+  "table": [
+    {
+      "status": "paid",
+      "order": 3,
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "status": "thinking",
+      "order": null
+    },
+    {
+      "id": "3",
+      "status": "ordered",
+      "order": 123
+    }
+  ],
   "product": [
     {
       "id": "cake",
@@ -220,7 +275,32 @@
       }
     }
   ],
-  "order": [],
+  "order": [
+    {
+      "address": "test",
+      "phone": "",
+      "mail": "",
+      "deliveryFee": 20,
+      "products": [],
+      "id": 1
+    },
+    {
+      "address": "test",
+      "phone": "",
+      "mail": "",
+      "deliveryFee": 20,
+      "products": [],
+      "id": 2
+    },
+    {
+      "address": "test",
+      "phone": "",
+      "mail": "",
+      "deliveryFee": 20,
+      "products": [],
+      "id": 3
+    }
+  ],
   "event": [
     {
       "id": 1,
@@ -240,7 +320,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["bread", "lemonWater"]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 3,
@@ -250,7 +333,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["bread", "lemonWater"]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 4,
@@ -270,7 +356,9 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": ["lemonWater"]
+      "starters": [
+        "lemonWater"
+      ]
     }
   ],
   "booking": [
@@ -281,7 +369,9 @@
       "table": 1,
       "duration": 4,
       "ppl": 4,
-      "starters": ["water"]
+      "starters": [
+        "water"
+      ]
     }
   ]
 }
