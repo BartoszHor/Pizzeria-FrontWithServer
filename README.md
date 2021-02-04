@@ -1,11 +1,9 @@
-# Development
+# Pizzeria Portal with Server
 
-## URLe dostępne dzięki 'yarn start'
+## Links
 
-- http://localhost:3000 - bieżący projekt, czyli panel administracyjny ( 'webpack-dev-server ')
-- http://localhost:3131 - strona pizzeri dla klientów
-- http://localhost:3131/api -url API projektu
-- http://localhost:3131/api/db - podgląd całej bazy danych w API
-- http://localhost:3131/api/panel - stan bieżącego projektu (panel adm.) z momentu uruchomienia 'yarn start' ( strona pod tym adresem nie zmienia się na żywo )
+- https://pizzasportal.herokuapp.com/- front/client side - Vanilla JS
+- https://pizzasportal.herokuapp.com/panel - admin panel/Login component in progress
+
 
 
